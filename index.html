@@ -16,7 +16,7 @@
       <p class="subtitle">Prouve-le et gagne des produits gourmands !</p>
     </header>
 
-    <form name="quiz" method="POST" data-netlify="true" action="https://quiz-chez-gaston.netlify.app/merci.html"><!-- j'avais d'abord un /merci.html mais avec Netlify ça ne marche pas apparemment --> 
+    <form name="quiz" method="POST" data-netlify="true" action="https://quiz-chez-gaston.netlify.app/merci.html"><!-- j'avais d'abord un /merci.html mais avec Netlify ça ne marche pas apparemment -->
       <input type="hidden" name="form-name" value="quiz">
 
       <div class="user-info">
@@ -56,6 +56,24 @@
     </form>
   </div>
 </div>
+
+<script>
+  document.querySelector('form[name="quiz"]').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Soumettre le formulaire à Netlify
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new FormData(this)
+    }).then(() => {
+      // Redirection après succès
+      window.location.href = 'merci.html';
+    }).catch(error => {
+      console.error('Erreur:', error);
+      window.location.href = 'merci.html';
+    });
+  });
+</script>
 
 </body>
 
