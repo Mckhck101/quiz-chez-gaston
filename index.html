@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Chez Gaston</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="overlay">
+  <div class="container">
+    <header>
+      <h1>🔥 Quiz - Connais-tu vraiment <br><span>Chez Gaston ?</span></h1>
+      <p class="subtitle">Prouve-le et gagne des produits gourmands !</p>
+    </header>
+
+    <form name="quiz" method="POST" data-netlify="true" action="/merci.html">
+      <input type="hidden" name="form-name" value="quiz">
+
+      <div class="user-info">
+        <input type="text" name="nom" placeholder="Ton nom complet" required>
+        <input type="email" name="email" placeholder="Ton email" required>
+      </div>
+
+      <div class="questions-container">
+        <div class="step">
+          <label>1. En quelle année Chez Gaston a ouvert à Bonamoussadi ?</label>
+          <input type="text" name="question1" placeholder="Ex: 2022" required>
+        </div>
+
+        <div class="step">
+          <label>2. Quels services propose Chez Gaston ?</label>
+          <textarea name="question2" placeholder="Décris les services..." required></textarea>
+        </div>
+
+        <div class="step">
+          <label>3. Nom exact du Maître boucher-charcutier ?</label>
+          <input type="text" name="question3" placeholder="Prénom et Nom" required>
+        </div>
+
+        <div class="step">
+          <label>4. Où est située exactement la boucherie ?</label>
+          <textarea name="question4" placeholder="Indique l'emplacement précis..." required></textarea>
+        </div>
+
+        <div class="step">
+          <label>5. Cite au moins 3 produits disponibles.</label>
+          <textarea name="question5" placeholder="Saucisson, pâté..." required></textarea>
+        </div>
+      </div>
+
+      <button type="submit">Envoyer ma participation 🚀</button>
+      <p class="deadline">⌛ Fin du jeu : 7 mars 2026 à 12h</p>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
